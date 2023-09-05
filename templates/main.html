@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Safe Route</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <!------ Include the above in your HEAD tag ---------->
+ <link rel="stylesheet" media="all" href="{{ url_for('static', filename='css/main.css')}}">
+ <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+
+
+<div class="container contact-form col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+            </div>
+            <form method="post">
+                <h3>Safe Pass</h3>
+               <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" name="sex" class="form-control" placeholder="M / F/ X*"/>
+                            <input type="text" name="descent" class="form-control" placeholder="Ethinicity (W,B,H,O,A)*"/>
+                            <input type="text" name="age" class="form-control" placeholder="AGE*"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="start" class="form-control" placeholder="Start Location*"/>
+                            <i class="bi bi-search" onclick="searchstart()"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="destination" class="form-control" placeholder="Destination*"/>
+                            <i class="bi bi-search" onclick="searchdest()"></i>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-select" aria-label="Transport" name="transport">
+                                <option selected value="driving-car">Driving</option>
+                                <option value="cycling-road">Cycling</option>
+                                <option value="foot-walking">Walking</option>
+                              </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" name="btnSubmit" class="btnContact" onclick="findpath()" clickable="False">Get Safest Path</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="width: 100%;">
+                        <div class="form-group">
+                            <div name="mapdata" class="mapclass">
+                                <iframe id="mapframe" name="mapframe" class="mapclass" src="/map"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+</div>
+
+</body>
+</html>
